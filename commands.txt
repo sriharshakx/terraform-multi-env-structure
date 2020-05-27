@@ -1,0 +1,20 @@
+11325  terraform apply -auto-approve -var-file=config/dev.tfvars -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/DEV/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11326  terraform apply -auto-approve -var-file=config/dev.tfvars 
+11327  terraform init -var-file=config/dev.tfvars -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/DEV/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11328  terraform init -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/DEV/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11330  rm -rf terraform.tfstate*
+11331  terraform init -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/DEV/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11332  terraform apply -auto-approve -var-file=config/dev.tfvars 
+11333  terraform init -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/QA/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11334  terraform apply -auto-approve -var-file=config/qa.tfvars 
+11336  rm -rf .terraform
+11337  terraform init -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/QA/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11338  terraform apply -auto-approve -var-file=config/qa.tfvars 
+11339  rm -rf .terraform 
+11340  rm -rf .terraform ; terraform init -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/QA/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11341  terraform apply -auto-approve -var-file=config/qa.tfvars 
+11342  rm -rf .terraform ; terraform init -backend-config=bucket=terraform-state-160071257600 -backend-config=key=statefile/PROD/terraform.tfstate -backend-config=region=eu-west-2 -backend-config=profile=tw-beach
+11343  terraform apply -auto-approve -var-file=config/prod.tfvars 
+11345  rm -rf .terraform
+11347  history | grep terraform 
+11348  history | grep terraform  | tail -n 20 
